@@ -439,7 +439,7 @@ export default function Portfolio() {
               <p className="text-gray-400 mb-8">
                 Skilled in React, JSX, Tailwind, Bootstrap, HTML, CSS, and JavaScript; specialized in UI/UX design using Figma for interactive prototyping.
               </p>
-              <div className="grid   grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid  text-slate-700  grid-cols-1 md:grid-cols-2 gap-8">
                 {skills.map((skill, index) => (
                   <SkillBar key={index} skill={skill.name} percentage={skill.percentage} />
                 ))}
@@ -589,7 +589,7 @@ export default function Portfolio() {
               </div>
             )}
           </div>
-          <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-300 to-purple-100 p-4 sm:p-8">
+          {/* <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-300 to-purple-100 p-4 sm:p-8">
             <AnimatePresence>
               {showForm && (
                 <motion.div
@@ -709,40 +709,41 @@ export default function Portfolio() {
                 </CardFooter>
               </Card>
             </motion.div>
-          </div>
+          </div> */}
         </section>
 
         <section ref={el => sectionRefs.current['contact'] = el} className=" ">
           <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
-              <h1 className="text-4xl font-bold mb-2" data-aos="fade-down">Contact</h1>
-              <div className="w-20 h-1 bg-blue-500 mb-8" data-aos="fade-right"></div>
+              <h1 className="text-4xl text-slate-700 font-bold mb-2" data-aos="fade-down">Contact</h1>
+              <div className="w-20 h-1 bg-blue-300 mb-8" data-aos="fade-right"></div>
               <p className="text-gray-600 mb-12" data-aos="fade-up">
-                Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit
+              "Reach out for inquiries, support, or partnership opportunities!"
+              
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div data-aos="fade-right">
                   <div className="bg-white shadow-md rounded-lg p-6 mb-8">
                     <div className="flex items-center mb-6 group">
-                      <MapPin className="text-2xl text-blue-500 mr-4 group-hover:text-blue-700 transition-colors duration-300" />
+                      <MapPin className="text-2xl text-blue-300 mr-4 group-hover:text-blue-300 transition-colors duration-300" />
                       <div>
                         <h3 className="text-lg font-semibold">Address</h3>
-                        <p className="text-gray-600">A108 Adam Street, New York, NY 535022</p>
+                        <p className="text-gray-600">Kicukiro,Kigali,Rwanda</p>
                       </div>
                     </div>
                     <div className="flex items-center mb-6 group">
-                      <PhoneCall className="text-2xl text-blue-500 mr-4 group-hover:text-blue-700 transition-colors duration-300" />
+                      <PhoneCall className="text-2xl text-blue-300 mr-4 group-hover:text-blue-300 transition-colors duration-300" />
                       <div>
                         <h3 className="text-lg font-semibold">Call Us</h3>
-                        <p className="text-gray-600">+1 5589 55488 55</p>
+                        <p className="text-gray-600">+250 780 114 522</p>
                       </div>
                     </div>
                     <div className="flex items-center group">
-                      <Mail className="text-2xl text-blue-500 mr-4 group-hover:text-blue-700 transition-colors duration-300" />
+                      <Mail className="text-2xl text-blue-300 mr-4 group-hover:text-blue-300 transition-colors duration-300" />
                       <div>
                         <h3 className="text-lg font-semibold">Email Us</h3>
-                        <p className="text-gray-600">info@example.com</p>
+                        <p className="text-gray-600">promesseirakoze10@gmail.com</p>
                       </div>
                     </div>
                   </div>
