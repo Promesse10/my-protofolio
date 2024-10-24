@@ -520,7 +520,7 @@ export default function Portfolio() {
         href={resume}
         download="My_Resume.pdf" // Customize the download file name if needed
         data-aos="bounce"
-        className="bg-gradient-to-br to-whitebg-gradient-to-br from-blue-300 to-white hover:from-blue-600 hover:to-purple-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50"
+        className="bg-gradient-to-br to-whitebg-gradient-to-br from-blue-300 to-blue-400 hover:from-blue-400 hover:to-slate-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50"
       >
         Download My CV
       </a></button>
@@ -812,7 +812,7 @@ export default function Portfolio() {
                       {errors.message && <p className="text-red-500 text-xs mt-1">*{errors.message}</p>}
                     </div>
                     <div className="text-center">
-                      <button type="submit" className="bg-blue-500 text-white px-6 py-3 rounded-md hover:bg-blue-600 transition-colors duration-300">
+                      <button type="submit" className="bg-blue-300 text-white px-6 py-3 rounded-md hover:bg-blue-300  transition-colors duration-300">
                         Send Message
                       </button>
                     </div>
