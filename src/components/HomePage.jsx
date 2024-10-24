@@ -19,6 +19,9 @@ import { Star, Send } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { useCallback } from 'react';
 import resume from '../IMAGE/My_Resume.pdf';
+import mobileApp from "../IMAGE/kary.jpg"
+import kigali from "../IMAGE/kigali.jpg"
+import environment from "../IMAGE/environment.jpg"
 
 const Button = ({ children, ...props }) => <button {...props}>{children}</button>
 const Input = ({ ...props }) => <input {...props} />
@@ -127,14 +130,15 @@ export default function Portfolio() {
   const sectionRefs = useRef({});
 
   const portfolioItems = [
-    { id: 1, category: 'APP', image: '/placeholder.svg?height=300&width=400', title: 'Mobile App Interface' },
-    { id: 2, category: 'PRODUCT', image: '/placeholder.svg?height=300&width=400', title: 'Red Smartwatch' },
-    { id: 3, category: 'BRANDING', image: '/placeholder.svg?height=300&width=400', title: 'Cosmetic Products' },
-    { id: 4, category: 'BOOKS', image: '/placeholder.svg?height=300&width=400', title: 'Teal Book Cover' },
-    { id: 5, category: 'APP', image: '/placeholder.svg?height=300&width=400', title: 'Wallet App Interface' },
-    { id: 6, category: 'PRODUCT', image: '/placeholder.svg?height=300&width=400', title: 'Photography Equipment' },
+    { id: 1, category: 'UI/UX', image: mobileApp, title: 'karkelly', link: 'https://www.figma.com/proto/dA01grWsZ5KM4hXNDa7T23/KARKELLY-COMPANY-Ltd?node-id=1115-4&scaling=scale-down-width&content-scaling=fixed&t=mEpMpYTMwS3snFIT-1' },
+    { id: 2, category: 'UI/UX', image: kigali, title: 'kigali event', link: 'https://www.figma.com/proto/tjVq7WgpbsHqUwMXLiKMDv/KIGALI-Events?node-id=247-81&t=1UfjEjtcjtqgphY7-1' },
+    { id: 6, category: 'UI/UX', image: environment , title: 'Environment', link: 'https://www.figma.com/design/lrb0eHW1YkDglh30yIo5Vo/Environment-project?node-id=0-1&t=CPaA0FavjXntwNKD-1' },
+    // { id: 4, category: 'FRONT-END', image: '/placeholder.svg?height=300&width=400', title: 'Teal Book Cover', link: '/projects/teal-book' },
+    // { id: 5, category: 'FRONT-END', image: '/placeholder.svg?height=300&width=400', title: 'Wallet App Interface', link: '/projects/wallet-app' },
+    // { id: 3, category: 'FRONT-END', image: '/placeholder.svg?height=300&width=400', title: 'Photography Equipment', link: '/projects/photography-equipment' },
   ];
-  const categories = ['ALL', 'APP', 'PRODUCT', 'BRANDING', 'BOOKS'];
+  
+  const categories = ['ALL', 'UI/UX', 'FRONT-END'];
   const skills = [
     { name: 'HTML', percentage: 100 },
     { name: 'CSS', percentage: 90 },
@@ -315,7 +319,6 @@ export default function Portfolio() {
             <a href="#" className="text-gray-400 hover:text-white"><FaTwitter /></a>
             <a href="#" className="text-gray-400 hover:text-white"><FaFacebookF /></a>
             <a href="#" className="text-gray-400 hover:text-white"><FaInstagram /></a>
-            <a href="#" className="text-gray-400 hover:text-white"><FaSkype /></a>
             <a href="#" className="text-gray-400 hover:text-white"><FaLinkedinIn /></a>
           </div>
           <ul className="space-y-7 mt-7">
@@ -342,7 +345,7 @@ export default function Portfolio() {
       </aside>
 
       <main className="flex-1 md:ml-64">
-        <div ref={el => sectionRefs.current['home'] = el} className="relative h-screen ">
+        <div ref={el => sectionRefs.current['home'] = el} className="relative w-full h-screen ">
           <img
             src={background}
             alt="Background"
@@ -434,9 +437,9 @@ export default function Portfolio() {
               ))}
             </div>
 
-            <div className="mb-16 text-black p-4 ">
-              <h2 className="text-4xl text-slate-700 font-bold mb-6">Skills</h2>
-              <p className="text-gray-400 mb-8">
+            <div className="mb-16 e bg-slate-700 p-4 ">
+              <h2 className="text-4xl text-white font-bold mb-6">Skills</h2>
+              <p className="text-white mb-8">
                 Skilled in React, JSX, Tailwind, Bootstrap, HTML, CSS, and JavaScript; specialized in UI/UX design using Figma for interactive prototyping.
               </p>
               <div className="grid  text-slate-700  grid-cols-1 md:grid-cols-2 gap-8">
@@ -531,25 +534,26 @@ export default function Portfolio() {
           
         </section>
 
-        <section ref={el => sectionRefs.current['portfolio'] = el} className="">
+        <section ref={el => sectionRefs.current['portfolio'] = el} className="bg-slate-700 ">
           <div className="container mx-auto px-4 py-8">
             <h1 className="text-4xl font-bold mb-4">Portfolio</h1>
-            <p className="mb-8 text-gray-600">
-              Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.
+            <p className="mb-8 text-white">
+            Designed engaging UI/UX projects and developed responsive front-end solutions, focusing on intuitive interfaces, accessibility, and seamless user experiences
             </p>
 
-            <div className="flex justify-center mb-8">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  className={`mx-2 px-4 py-2 rounded ${selectedCategory === category ? 'bg-blue-500 text-white' : 'bg -gray-200'
-                    }`}
-                  onClick={() => setSelectedCategory(category)}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
+            <div className="flex flex-wrap justify-center mb-8">
+  {categories.map((category) => (
+    <button
+      key={category}
+      className={`mx-1 sm:mx-2 my-1 px-3 py-2 sm:px-4 rounded ${selectedCategory === category ? 'bg-blue-300 text-white' : 'bg-white text-slate-700'
+        }`}
+      onClick={() => setSelectedCategory(category)}
+    >
+      {category}
+    </button>
+  ))}
+</div>
+
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredItems.map((item) => (
@@ -559,22 +563,27 @@ export default function Portfolio() {
                     alt={item.title}
                     className="w-full h-auto"
                   />
-                  <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <button
-                      onClick={() => setModalImage(item.image)}
-                      className="p-2 bg-white rounded-full mr-2"
-                      aria-label="Zoom"
-                    >
-                      <ZoomIn className="w-6 h-6" />
-                    </button>
-                    <a
-                      href="#"
-                      className="p-2 bg-white rounded-full"
-                      aria-label="Link to project"
-                    >
-                      <LinkIcon className="w-6 h-6" />
-                    </a>
-                  </div>
+              <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+  <div className="flex items-center">
+    <button
+      onClick={() => setModalImage(item.image)}
+      className="p-2 bg-white rounded-full mr-2"
+      aria-label="Zoom"
+    >
+      <ZoomIn className="w-6 text-gray-600 h-6" />
+    </button>
+    <a
+      href={item.link}
+      className="p-2 bg-white rounded-full shadow"
+      aria-label={`Link to ${item.title}`}
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <LinkIcon className="w-6 h-6 text-gray-600" />
+    </a>
+  </div>
+</div>
+
                 </div>
               ))}
             </div>
@@ -584,7 +593,7 @@ export default function Portfolio() {
                 <img
                   src={modalImage}
                   alt="Enlarged portfolio item"
-                  className="max-w-full max-h-full"
+                  className="max-w-4xl max-h-max"
                 />
               </div>
             )}
@@ -748,14 +757,15 @@ export default function Portfolio() {
                     </div>
                   </div>
                   <div className="w-full h-64 rounded-lg overflow-hidden">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9663095919565!2d-74.00425878428698!3d40.74076684379132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259bf5c1654f3%3A0xc80f9cfce5383d5d!2sGoogle!5e0!3m2!1sen!2sus!4v1635181410153!5m2!1sen!2sus"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      allowFullScreen=""
-                      loading="lazy"
-                    ></iframe>
+                  <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d220.00910963383117!2d30.223558070185927!3d-1.9859983357037614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19db59007433291f%3A0x88ad69ba4cb15854!2sKarkelly%20ltd!5e1!3m2!1sen!2sus!4v1726288453388!5m2!1sen!2sus"
+                width="90%"
+                height="200"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
                   </div>
                 </div>
 
@@ -825,9 +835,9 @@ export default function Portfolio() {
           </div>
         </section>
 
-        <footer className=" bg-gradient-to-br from-blue-300 to-white  text-center text-gray-600 " data-aos="fade-up">
-          <p>© Copyright iPortfolio. All Rights Reserved</p>
-          <p>{currentYear}</p>
+        <footer className=" bg-slate-700 py-5 text-center text-white">
+          <p>© Copyright PromesseIrakoze  <br />All Rights Reserved {currentYear}</p>
+          
         </footer>
 
       </main>
