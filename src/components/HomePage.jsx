@@ -437,12 +437,12 @@ export default function Portfolio() {
               ))}
             </div>
 
-            <div className="mb-16 e bg-slate-700 p-4 ">
-              <h2 className="text-4xl text-white font-bold mb-6">Skills</h2>
-              <p className="text-white mb-8">
+            <div className="mb-16  p-4 ">
+              <h2 className="text-4xl text-slate-700 font-bold mb-6">Skills</h2>
+              <p className="text-slate-700  mb-8">
                 Skilled in React, JSX, Tailwind, Bootstrap, HTML, CSS, and JavaScript; specialized in UI/UX design using Figma for interactive prototyping.
               </p>
-              <div className="grid  text-slate-700  grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid  text-white  grid-cols-1 md:grid-cols-2 gap-8">
                 {skills.map((skill, index) => (
                   <SkillBar key={index} skill={skill.name} percentage={skill.percentage} />
                 ))}
@@ -534,7 +534,7 @@ export default function Portfolio() {
           
         </section>
 
-        <section ref={el => sectionRefs.current['portfolio'] = el} className="bg-slate-700 ">
+        <section ref={el => sectionRefs.current['portfolio'] = el} className="bg-slate-800 ">
           <div className="container mx-auto px-4 py-8">
             <h1 className="text-4xl font-bold mb-4">Portfolio</h1>
             <p className="mb-8 text-white">
