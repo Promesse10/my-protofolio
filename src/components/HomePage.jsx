@@ -835,7 +835,7 @@ export default function Portfolio() {
           </div>
         </section>
 
-        <footer className=" bg-slate-700 py-5 text-center text-white">
+        <footer className=" bg-slate-800 py-5 text-center text-white">
           <p>© Copyright PromesseIrakoze  <br />All Rights Reserved {currentYear}</p>
           
         </footer>
