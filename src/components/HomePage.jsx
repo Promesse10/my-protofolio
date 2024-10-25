@@ -133,7 +133,7 @@ export default function Portfolio() {
     { id: 1, category: 'UI/UX', image: mobileApp, title: 'karkelly', link: 'https://www.figma.com/proto/dA01grWsZ5KM4hXNDa7T23/KARKELLY-COMPANY-Ltd?node-id=1115-4&scaling=scale-down-width&content-scaling=fixed&t=mEpMpYTMwS3snFIT-1' },
     { id: 2, category: 'UI/UX', image: kigali, title: 'kigali event', link: 'https://www.figma.com/proto/tjVq7WgpbsHqUwMXLiKMDv/KIGALI-Events?node-id=247-81&t=1UfjEjtcjtqgphY7-1' },
     { id: 6, category: 'UI/UX', image: environment , title: 'Environment', link: 'https://www.figma.com/design/lrb0eHW1YkDglh30yIo5Vo/Environment-project?node-id=0-1&t=CPaA0FavjXntwNKD-1' },
-    // { id: 4, category: 'FRONT-END', image: '/placeholder.svg?height=300&width=400', title: 'Teal Book Cover', link: '/projects/teal-book' },
+    { id: 4, category: 'FRONT-END', image: mobileApp, title: 'karkely', link: 'https://karkelly.rw/' },
     // { id: 5, category: 'FRONT-END', image: '/placeholder.svg?height=300&width=400', title: 'Wallet App Interface', link: '/projects/wallet-app' },
     // { id: 3, category: 'FRONT-END', image: '/placeholder.svg?height=300&width=400', title: 'Photography Equipment', link: '/projects/photography-equipment' },
   ];
@@ -732,7 +732,7 @@ export default function Portfolio() {
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div data-aos="fade-right">
+                <div data-aos="fade-up">
                   <div className="bg-white shadow-md rounded-lg p-6 mb-8">
                     <div className="flex items-center mb-6 group">
                       <MapPin className="text-2xl text-blue-300 mr-4 group-hover:text-blue-300 transition-colors duration-300" />
@@ -769,7 +769,7 @@ export default function Portfolio() {
                   </div>
                 </div>
 
-                <div data-aos="fade-left">
+                <div data-aos="fade-down">
                   <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-lg p-6">
                     <div className="grid grid-cols-2 gap-4 mb-4">
                       <div>
