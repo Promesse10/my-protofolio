@@ -387,39 +387,42 @@ export default function Portfolio() {
                 />
               </div>
 
-              <div className="md:w-1/2" data-aos="fade-up">
-                <h2 className="text-2xl text-slate-700 font-semibold mb-4">Front-End Developer</h2>
-                <p className="text-base italic mb-6">
-                  I’m Promesse IRAKOZE, a dedicated front-end developer and UI/UX designer with expertise in creating responsive and engaging digital interfaces. I focus on combining design principles and development skills to build seamless, user-focused web experiences.
-                </p>
+              <div className="md:w-1/2 w-full" data-aos="fade-up">
+  <h2 className="text-xl md:text-2xl text-slate-700 font-semibold mb-4">Front-End Developer</h2>
+  <p className="text-sm md:text-base italic mb-6">
+    I’m Promesse IRAKOZE, a dedicated front-end developer and UI/UX designer with expertise in creating responsive and engaging digital interfaces. I focus on combining design principles and development skills to build seamless, user-focused web experiences.
+  </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="flex items-center">
-                    <span className="text-blue-300 mr-2">▸</span>
-                    <span className="font-semibold mr-2">Birthday:</span> 30/08/2004
-                  </div>
+  <div className="grid grid-cols-1 gap-4"> {/* Removed md:grid-cols-2 */}
+    <div className="flex items-center">
+      <span className="text-blue-300 mr-2">▸</span>
+      <span className="text-sm md:text-base font-semibold mr-2">Birthday:</span> 30/08/2004
+    </div>
 
-                  <div className="flex items-center">
-                    <span className="text-blue-300 mr-2">▸</span>
-                    <span className="font-semibold mr-2">Phone:</span> +250 780 114 522
-                  </div>
+    <div className="flex items-center">
+      <span className="text-blue-300 mr-2">▸</span>
+      <span className="text-sm md:text-base font-semibold mr-2">Phone:</span> +250 780 114 522
+    </div>
 
-                  <div className="flex items-center">
-                    <span className="text-blue-300 mr-2">▸</span>
-                    <span className="font-semibold mr-2">City:</span> Kigali,Rwanda
-                  </div>
-                  <div className="flex items-center">
-                    <span className="text-blue-300 mr-2">▸</span>
-                    <span className="font-semibold mr-2">Freelance:</span> Available
-                  </div>
-                </div>
-                <div className="flex flex-col sm:flex-row items-start sm:items-center mt-4">
-                  <span className="text-blue-300 mr-2">▸</span>
-                  <span className="font-semibold mr-2">Email:</span>
-                  <h6 className="break-all">promesseirakoze10@gmail.com</h6>
-                </div>
+    <div className="flex items-center">
+      <span className="text-blue-300 mr-2">▸</span>
+      <span className="text-sm md:text-base font-semibold mr-2">City:</span> Kigali, Rwanda
+    </div>
 
-              </div>
+    <div className="flex items-center">
+      <span className="text-blue-300 mr-2">▸</span>
+      <span className="text-sm md:text-base font-semibold mr-2">Freelance:</span> Available
+    </div>
+  </div>
+
+  <div className="flex flex-col sm:flex-row items-start sm:items-center mt-4">
+    <span className="text-blue-300 mr-2">▸</span>
+    <span className="text-sm md:text-base font-semibold mr-2">Email:</span>
+    <h6 className="break-all text-sm md:text-base">promesseirakoze10@gmail.com</h6>
+  </div>
+</div>
+
+
             </div>
           </div>
           <div className="py-9 container mx-auto ">
