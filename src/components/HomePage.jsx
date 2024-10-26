@@ -2,7 +2,7 @@
 'use client'
 
 import React, { useState, useEffect, useRef } from 'react';
-import { FaTwitter, FaFacebookF, FaInstagram, FaSkype, FaLinkedinIn, FaArrowUp } from 'react-icons/fa';
+import { FaTwitter, FaFacebookF, FaInstagram, FaGithub , FaLinkedinIn, FaArrowUp } from 'react-icons/fa';
 import { HiHome, HiUser, HiDocument, HiViewGrid, HiServer, HiMail, HiMenu } from 'react-icons/hi';
 import { Smile, FileText, Headphones, Users } from 'lucide-react';
 import AOS from 'aos';
@@ -316,10 +316,14 @@ export default function Portfolio() {
         </div>
         <nav>
           <div className="mt-8 flex justify-center space-x-4">
-            <a href="#" className="text-gray-400 hover:text-white"><FaTwitter /></a>
-            <a href="#" className="text-gray-400 hover:text-white"><FaFacebookF /></a>
-            <a href="#" className="text-gray-400 hover:text-white"><FaInstagram /></a>
-            <a href="#" className="text-gray-400 hover:text-white"><FaLinkedinIn /></a>
+            <a href="https://github.com/Promesse10" rel="noopener noreferrer"
+      target="_blank" className="text-gray-400 hover:text-white"><FaGithub /></a>
+            <a href="https://web.facebook.com/?_rdc=1&_rdr" rel="noopener noreferrer"
+      target="_blank" className="text-gray-400 hover:text-white"><FaFacebookF /></a>
+            <a href="https://www.instagram.com/_promesse" rel="noopener noreferrer"
+      target="_blank" className="text-gray-400 hover:text-white"><FaInstagram /></a>
+            <a href="https://rw.linkedin.com/in/irakoze-promesse-422700217" rel="noopener noreferrer"
+      target="_blank" className="text-gray-400 hover:text-white"><FaLinkedinIn /></a>
           </div>
           <ul className="space-y-7 mt-7">
             {[
@@ -445,7 +449,7 @@ export default function Portfolio() {
               <p className="text-slate-700  mb-8">
                 Skilled in React, JSX, Tailwind, Bootstrap, HTML, CSS, and JavaScript; specialized in UI/UX design using Figma for interactive prototyping.
               </p>
-              <div className="grid  text-white  grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid  text-slate-700  grid-cols-1 md:grid-cols-2 gap-8">
                 {skills.map((skill, index) => (
                   <SkillBar key={index} skill={skill.name} percentage={skill.percentage} />
                 ))}
