@@ -387,7 +387,7 @@ export default function Portfolio() {
                 />
               </div>
 
-              <div className="md:w-1/2" data-aos="fade-left">
+              <div className="md:w-1/2" data-aos="fade-up">
                 <h2 className="text-2xl text-slate-700 font-semibold mb-4">Front-End Developer</h2>
                 <p className="text-base italic mb-6">
                   I’m Promesse IRAKOZE, a dedicated front-end developer and UI/UX designer with expertise in creating responsive and engaging digital interfaces. I focus on combining design principles and development skills to build seamless, user-focused web experiences.
@@ -492,7 +492,7 @@ export default function Portfolio() {
       </div>
 
       <div>
-        <h2 className="text-2xl font-bold mb-6" data-aos="fade-left">Professional Experience</h2>
+        <h2 className="text-2xl font-bold mb-6" data-aos="fade-up">Professional Experience</h2>
         <div className="relative pl-8 mb-8" data-aos="fade-up">
           <div className="absolute left-0 top-1 w-4 h-4 bg-blue-300 rounded-full"></div>
           <div className="absolute left-[7px] top-5 bottom-0 w-0.5 bg-blue-300"></div>
@@ -758,7 +758,7 @@ export default function Portfolio() {
                   </div>
                   <div className="w-full h-64 rounded-lg overflow-hidden">
                   <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d220.00910963383117!2d30.223558070185927!3d-1.9859983357037614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19db59007433291f%3A0x88ad69ba4cb15854!2sKarkelly%20ltd!5e1!3m2!1sen!2sus!4v1726288453388!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1465.3096954514415!2d30.217543745947673!3d-1.98973105874895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e1!3m2!1sen!2srw!4v1729926465440!5m2!1sen!2srw"
                 width="90%"
                 height="200"
                 style={{ border: 0 }}
@@ -768,7 +768,7 @@ export default function Portfolio() {
               ></iframe>
                   </div>
                 </div>
-
+           
                 <div data-aos="fade-down">
                   <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-lg p-6">
                     <div className="grid grid-cols-2 gap-4 mb-4">
