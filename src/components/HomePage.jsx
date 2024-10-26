@@ -361,7 +361,7 @@ export default function Portfolio() {
           <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end items-center  text-center p-4">
             <h1 className="text-2xl md:text-7xl font-bold mb-4  ">Promesse IRAKOZE</h1>
             <p className="text-2xl md:text-3xl mb-8">
-              I'm <TypeWriter text=" Front-End Developer " delay={100} />
+              I'm a<TypeWriter text=" Front-End Developer " delay={100} />
             </p>
             <button
               onClick={openQRCode}
