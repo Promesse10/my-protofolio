@@ -778,7 +778,7 @@ export default function Portfolio() {
            
                 <div data-aos="fade-down">
                   <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-lg p-6">
-                    <div className="grid grid-cols-2 gap-4 mb-4">
+                    <div className=" text-black grid grid-cols-2 gap-4 mb-4">
                       <div>
                         <label htmlFor="name" className="block text-gray-700 mb-2">Your Name</label>
                         <input
@@ -804,7 +804,7 @@ export default function Portfolio() {
                         {errors.email && <p className="text-red-500 text-xs mt-1">*{errors.email}</p>}
                       </div>
                     </div>
-                    <div className="mb-4">
+                    <div className="mb-4 text-black">
                       <label htmlFor="subject" className="block text-gray-700 mb-2">Subject</label>
                       <input
                         type="text"
@@ -816,7 +816,7 @@ export default function Portfolio() {
                       />
                       {errors.subject && <p className="text-red-500 text-xs mt-1">*{errors.subject}</p>}
                     </div>
-                    <div className="mb-4">
+                    <div className="mb-4 text-black">
                       <label htmlFor="message" className="block text-gray-700 mb-2">Message</label>
                       <textarea
                         id="message"
@@ -824,6 +824,7 @@ export default function Portfolio() {
                         rows={5}
                         value={formData.message}
                         onChange={handleChange}
+
                         className={`w-full px-3 py-2 border rounded-md ${errors.message ? 'border-red-500' : 'border-gray-300'}`}
                       ></textarea>
                       {errors.message && <p className="text-red-500 text-xs mt-1">*{errors.message}</p>}
