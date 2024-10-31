@@ -2,7 +2,7 @@
 'use client'
 
 import React, { useState, useEffect, useRef } from 'react';
-import { FaTwitter, FaFacebookF, FaInstagram, FaGithub , FaLinkedinIn, FaArrowUp } from 'react-icons/fa';
+import { FaTwitter, FaFacebookF, FaInstagram, FaGithub, FaLinkedinIn, FaArrowUp } from 'react-icons/fa';
 import { HiHome, HiUser, HiDocument, HiViewGrid, HiServer, HiMail, HiMenu } from 'react-icons/hi';
 import { Smile, FileText, Headphones, Users } from 'lucide-react';
 import AOS from 'aos';
@@ -22,6 +22,8 @@ import resume from '../IMAGE/My_Resume.pdf';
 import mobileApp from "../IMAGE/kary.jpg"
 import kigali from "../IMAGE/kigali.jpg"
 import environment from "../IMAGE/environment.jpg"
+import rest from "../IMAGE/rest.jpg"
+import video from '../IMAGE/example.mp4';
 
 const Button = ({ children, ...props }) => <button {...props}>{children}</button>
 const Input = ({ ...props }) => <input {...props} />
@@ -132,12 +134,12 @@ export default function Portfolio() {
   const portfolioItems = [
     { id: 1, category: 'UI/UX', image: mobileApp, title: 'karkelly', link: 'https://www.figma.com/proto/dA01grWsZ5KM4hXNDa7T23/KARKELLY-COMPANY-Ltd?node-id=1115-4&scaling=scale-down-width&content-scaling=fixed&t=mEpMpYTMwS3snFIT-1' },
     { id: 2, category: 'UI/UX', image: kigali, title: 'kigali event', link: 'https://www.figma.com/proto/tjVq7WgpbsHqUwMXLiKMDv/KIGALI-Events?node-id=247-81&t=1UfjEjtcjtqgphY7-1' },
-    { id: 6, category: 'UI/UX', image: environment , title: 'Environment', link: 'https://www.figma.com/design/lrb0eHW1YkDglh30yIo5Vo/Environment-project?node-id=0-1&t=CPaA0FavjXntwNKD-1' },
+    { id: 6, category: 'UI/UX', image: environment, title: 'Environment', link: 'https://www.figma.com/design/lrb0eHW1YkDglh30yIo5Vo/Environment-project?node-id=0-1&t=CPaA0FavjXntwNKD-1' },
     { id: 4, category: 'FRONT-END', image: mobileApp, title: 'karkely', link: 'https://karkelly.rw/' },
-    // { id: 5, category: 'FRONT-END', image: '/placeholder.svg?height=300&width=400', title: 'Wallet App Interface', link: '/projects/wallet-app' },
-    // { id: 3, category: 'FRONT-END', image: '/placeholder.svg?height=300&width=400', title: 'Photography Equipment', link: '/projects/photography-equipment' },
+    { id: 5, category: 'FRONT-END', image: rest, title: 'Restaraunt', link: 'https://mangwibi.netlify.app/' },
+    { id: 3, category: 'FRONT-END', video: video, title: 'Old Fox', link: 'https://oldfox.netlify.app/' },
   ];
-  
+
   const categories = ['ALL', 'UI/UX', 'FRONT-END'];
   const skills = [
     { name: 'HTML', percentage: 100 },
@@ -293,6 +295,26 @@ export default function Portfolio() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+  const MyComponent = ({ filteredItems }) => {
+    // State for the modal
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [modalMedia, setModalMedia] = useState(null); // Holds the image or video URL
+    const [isVideo, setIsVideo] = useState(false); // Flag to determine if media is video
+
+    // Function to open modal with media
+    const handleZoomClick = (media, isVideo) => {
+      setModalMedia(media);
+      setIsVideo(isVideo);
+      setIsModalOpen(true);
+    };
+
+    // Function to close modal
+    const closeModal = () => {
+      setIsModalOpen(false);
+      setModalMedia(null);
+      setIsVideo(false);
+    };
+  }
 
   return (
     <div className="flex flex-col md:flex-row min-h-screen bg-gray-900 text-white">
@@ -317,13 +339,13 @@ export default function Portfolio() {
         <nav>
           <div className="mt-8 flex justify-center space-x-4">
             <a href="https://github.com/Promesse10" rel="noopener noreferrer"
-      target="_blank" className="text-gray-400 hover:text-white"><FaGithub /></a>
+              target="_blank" className="text-gray-400 hover:text-white"><FaGithub /></a>
             <a href="https://web.facebook.com/?_rdc=1&_rdr" rel="noopener noreferrer"
-      target="_blank" className="text-gray-400 hover:text-white"><FaFacebookF /></a>
+              target="_blank" className="text-gray-400 hover:text-white"><FaFacebookF /></a>
             <a href="https://www.instagram.com/_promesse" rel="noopener noreferrer"
-      target="_blank" className="text-gray-400 hover:text-white"><FaInstagram /></a>
+              target="_blank" className="text-gray-400 hover:text-white"><FaInstagram /></a>
             <a href="https://rw.linkedin.com/in/irakoze-promesse-422700217" rel="noopener noreferrer"
-      target="_blank" className="text-gray-400 hover:text-white"><FaLinkedinIn /></a>
+              target="_blank" className="text-gray-400 hover:text-white"><FaLinkedinIn /></a>
           </div>
           <ul className="space-y-7 mt-7">
             {[
@@ -392,39 +414,39 @@ export default function Portfolio() {
               </div>
 
               <div className="md:w-1/2 w-full" data-aos="fade-up">
-  <h2 className="text-xl md:text-2xl text-slate-700 font-semibold mb-4">Front-End Developer</h2>
-  <p className="text-sm md:text-base italic mb-6">
-    I’m Promesse IRAKOZE, a dedicated front-end developer and UI/UX designer with expertise in creating responsive and engaging digital interfaces. I focus on combining design principles and development skills to build seamless, user-focused web experiences.
-  </p>
+                <h2 className="text-xl md:text-2xl text-slate-700 font-semibold mb-4">Front-End Developer</h2>
+                <p className="text-sm md:text-base italic mb-6">
+                  I’m Promesse IRAKOZE, a dedicated front-end developer and UI/UX designer with expertise in creating responsive and engaging digital interfaces. I focus on combining design principles and development skills to build seamless, user-focused web experiences.
+                </p>
 
-  <div className="grid grid-cols-1 gap-4"> {/* Removed md:grid-cols-2 */}
-    <div className="flex items-center">
-      <span className="text-blue-300 mr-2">▸</span>
-      <span className="text-sm md:text-base font-semibold mr-2">Birthday:</span> 30/08/2004
-    </div>
+                <div className="grid grid-cols-1 gap-4"> {/* Removed md:grid-cols-2 */}
+                  <div className="flex items-center">
+                    <span className="text-blue-300 mr-2">▸</span>
+                    <span className="text-sm md:text-base font-semibold mr-2">Birthday:</span> 30/08/2004
+                  </div>
 
-    <div className="flex items-center">
-      <span className="text-blue-300 mr-2">▸</span>
-      <span className="text-sm md:text-base font-semibold mr-2">Phone:</span> +250 780 114 522
-    </div>
+                  <div className="flex items-center">
+                    <span className="text-blue-300 mr-2">▸</span>
+                    <span className="text-sm md:text-base font-semibold mr-2">Phone:</span> +250 780 114 522
+                  </div>
 
-    <div className="flex items-center">
-      <span className="text-blue-300 mr-2">▸</span>
-      <span className="text-sm md:text-base font-semibold mr-2">City:</span> Kigali, Rwanda
-    </div>
+                  <div className="flex items-center">
+                    <span className="text-blue-300 mr-2">▸</span>
+                    <span className="text-sm md:text-base font-semibold mr-2">City:</span> Kigali, Rwanda
+                  </div>
 
-    <div className="flex items-center">
-      <span className="text-blue-300 mr-2">▸</span>
-      <span className="text-sm md:text-base font-semibold mr-2">Freelance:</span> Available
-    </div>
-  </div>
+                  <div className="flex items-center">
+                    <span className="text-blue-300 mr-2">▸</span>
+                    <span className="text-sm md:text-base font-semibold mr-2">Freelance:</span> Available
+                  </div>
+                </div>
 
-  <div className="flex flex-col sm:flex-row items-start sm:items-center mt-4">
-    <span className="text-blue-300 mr-2">▸</span>
-    <span className="text-sm md:text-base font-semibold mr-2">Email:</span>
-    <h6 className="break-all text-sm md:text-base">promesseirakoze10@gmail.com</h6>
-  </div>
-</div>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center mt-4">
+                  <span className="text-blue-300 mr-2">▸</span>
+                  <span className="text-sm md:text-base font-semibold mr-2">Email:</span>
+                  <h6 className="break-all text-sm md:text-base">promesseirakoze10@gmail.com</h6>
+                </div>
+              </div>
 
 
             </div>
@@ -459,148 +481,161 @@ export default function Portfolio() {
         </section>
 
         <section ref={el => sectionRefs.current['resume'] = el} className="">
-        <div className="bg-white text-slate-700 min-h-screen p-8 md:p-16">
-  <div className="max-w-4xl mx-auto">
-    <h1 className="text-4xl font-bold mb-4" data-aos="fade-down">Resume</h1>
-    <div className="h-1 w-16 bg-blue-300 mb-8" data-aos="fade-right"></div>
+          <div className="bg-white text-slate-700 min-h-screen p-8 md:p-16">
+            <div className="max-w-4xl mx-auto">
+              <h1 className="text-4xl font-bold mb-4" data-aos="fade-down">Resume</h1>
+              <div className="h-1 w-16 bg-blue-300 mb-8" data-aos="fade-right"></div>
 
-    <p className="mb-12 text-gray-600" data-aos="fade-up">
-      Designed intuitive and visually appealing user interfaces for web applications, focusing on usability and user experience. Conducted user research, created wireframes, and developed interactive prototypes to test and refine design concepts. Collaborated with developers and stakeholders to ensure seamless integration of design elements into web applications.
-    </p>
+              <p className="mb-12 text-gray-600" data-aos="fade-up">
+                Designed intuitive and visually appealing user interfaces for web applications, focusing on usability and user experience. Conducted user research, created wireframes, and developed interactive prototypes to test and refine design concepts. Collaborated with developers and stakeholders to ensure seamless integration of design elements into web applications.
+              </p>
 
-    <div className="grid md:grid-cols-2 gap-12">
-      <div>
-        <h2 className="text-2xl font-bold mb-6" data-aos="fade-right">Summary</h2>
-        <div className="relative pl-8 mb-8" data-aos="fade-up">
-          <div className="absolute left-0 top-1 w-4 h-4 bg-blue-300 rounded-full"></div>
-          <div className="absolute left-[7px] top-5 bottom-0 w-0.5 bg-blue-300"></div>
-          <h3 className="text-xl font-semibold mb-2">My Info</h3 >
-          <p className="text-gray-600 mb-4">
-            Front End Developer with a passion for creating visually appealing and user-friendly interfaces. Experienced in using modern web technologies to craft responsive and accessible web applications.
-          </p>
-          <ul className="list-disc list-inside text-gray-600">
-            <li>Kigali, Kicukiro, Rwanda</li>
-            <li>+250780114522</li>
-            <li>promesseirakoze10@gmail.com</li>
-          </ul>
-        </div>
+              <div className="grid md:grid-cols-2 gap-12">
+                <div>
+                  <h2 className="text-2xl font-bold mb-6" data-aos="fade-right">Summary</h2>
+                  <div className="relative pl-8 mb-8" data-aos="fade-up">
+                    <div className="absolute left-0 top-1 w-4 h-4 bg-blue-300 rounded-full"></div>
+                    <div className="absolute left-[7px] top-5 bottom-0 w-0.5 bg-blue-300"></div>
+                    <h3 className="text-xl font-semibold mb-2">My Info</h3 >
+                    <p className="text-gray-600 mb-4">
+                      Front End Developer with a passion for creating visually appealing and user-friendly interfaces. Experienced in using modern web technologies to craft responsive and accessible web applications.
+                    </p>
+                    <ul className="list-disc list-inside text-gray-600">
+                      <li>Kigali, Kicukiro, Rwanda</li>
+                      <li>+250780114522</li>
+                      <li>promesseirakoze10@gmail.com</li>
+                    </ul>
+                  </div>
 
-        <h2 className="text-2xl font-bold mb-6" data-aos="fade-right">Education</h2>
-        <div className="relative pl-8 mb-8" data-aos="fade-up">
-          <div className="absolute left-0 top-1 w-4 h-4 bg-blue-300 rounded-full"></div>
-          <div className="absolute left-[7px] top-5 bottom-0 w-0.5 bg-blue-300"></div>
-          <h3 className="text-xl font-semibold mb-2">BACHELOR OF SCIENCE IN COMPUTER SCIENCE</h3>
-          <p className="text-gray-600 mb-2">2024 - Present </p>
-          <p className="text-gray-600 mb-4">University of Kigali, Kigali, Rwanda</p>
-          <p className="text-gray-600">
-            Focused on Front End Development, UI/UX Design, and mastering web technologies like React and Tailwind CSS to build user-centric applications.
-          </p>
-        </div>
-      </div>
+                  <h2 className="text-2xl font-bold mb-6" data-aos="fade-right">Education</h2>
+                  <div className="relative pl-8 mb-8" data-aos="fade-up">
+                    <div className="absolute left-0 top-1 w-4 h-4 bg-blue-300 rounded-full"></div>
+                    <div className="absolute left-[7px] top-5 bottom-0 w-0.5 bg-blue-300"></div>
+                    <h3 className="text-xl font-semibold mb-2">BACHELOR OF SCIENCE IN COMPUTER SCIENCE</h3>
+                    <p className="text-gray-600 mb-2">2024 - Present </p>
+                    <p className="text-gray-600 mb-4">University of Kigali, Kigali, Rwanda</p>
+                    <p className="text-gray-600">
+                      Focused on Front End Development, UI/UX Design, and mastering web technologies like React and Tailwind CSS to build user-centric applications.
+                    </p>
+                  </div>
+                </div>
 
-      <div>
-        <h2 className="text-2xl font-bold mb-6" data-aos="fade-up">Professional Experience</h2>
-        <div className="relative pl-8 mb-8" data-aos="fade-up">
-          <div className="absolute left-0 top-1 w-4 h-4 bg-blue-300 rounded-full"></div>
-          <div className="absolute left-[7px] top-5 bottom-0 w-0.5 bg-blue-300"></div>
-          <h3 className="text-xl font-semibold mb-2">UI/UX DESIGNER</h3>
-          <p className="text-gray-600 mb-2">2021 - 2023</p>
-          <p className="text-gray-600 mb-4">HAZA TECH, Kigali, Kicukiro</p>
-          <ul className="list-disc list-inside text-gray-600">
-            <li>Designed and developed user-centered interfaces for web applications, enhancing usability and overall experience.</li>
-            <li>Conducted user research, wireframing, and interactive prototyping to refine design concepts.</li>
-            <li>Collaborated closely with developers to ensure consistency and quality in integration.</li>
-          </ul>
-        </div>
+                <div>
+                  <h2 className="text-2xl font-bold mb-6" data-aos="fade-up">Professional Experience</h2>
+                  <div className="relative pl-8 mb-8" data-aos="fade-up">
+                    <div className="absolute left-0 top-1 w-4 h-4 bg-blue-300 rounded-full"></div>
+                    <div className="absolute left-[7px] top-5 bottom-0 w-0.5 bg-blue-300"></div>
+                    <h3 className="text-xl font-semibold mb-2">UI/UX DESIGNER</h3>
+                    <p className="text-gray-600 mb-2">2021 - 2023</p>
+                    <p className="text-gray-600 mb-4">HAZA TECH, Kigali, Kicukiro</p>
+                    <ul className="list-disc list-inside text-gray-600">
+                      <li>Designed and developed user-centered interfaces for web applications, enhancing usability and overall experience.</li>
+                      <li>Conducted user research, wireframing, and interactive prototyping to refine design concepts.</li>
+                      <li>Collaborated closely with developers to ensure consistency and quality in integration.</li>
+                    </ul>
+                  </div>
 
-        <div className="relative pl-8 mb-8" data-aos="fade-up">
-          <div className="absolute left-0 top-1 w-4 h-4 bg-blue-300 rounded-full"></div>
-          <div className="absolute left-[7px] top-5 bottom-0 w-0.5 bg-blue-300"></div>
-          <h3 className="text-xl font-semibold mb-2">FRONT END DEVELOPER</h3>
-          <p className="text-gray-600 mb-2">2023 - 2024</p>
-          <p className="text-gray-600 mb-4">TeckVilla Ltd, Kigali, Kicukiro</p>
-          <ul className="list-disc list-inside text-gray-600">
-            <li>Implemented responsive designs using HTML, CSS, and JavaScript, ensuring consistency across devices and browsers.</li>
-            <li>Conducted usability testing to iterate and improve design solutions based on user feedback.</li>
-            <li>Developed and maintained front-end code using React and modern JavaScript features (ES6+).</li>
-          </ul>
-        </div>
-      </div>
-      <button>    <a
-        href={resume}
-        download="My_Resume.pdf" // Customize the download file name if needed
-        data-aos="bounce"
-        className="bg-gradient-to-br to-whitebg-gradient-to-br from-blue-300 to-blue-400 hover:from-blue-400 hover:to-slate-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50"
-      >
-        Download My CV
-      </a></button>
-    </div>
-  </div>
-</div>
+                  <div className="relative pl-8 mb-8" data-aos="fade-up">
+                    <div className="absolute left-0 top-1 w-4 h-4 bg-blue-300 rounded-full"></div>
+                    <div className="absolute left-[7px] top-5 bottom-0 w-0.5 bg-blue-300"></div>
+                    <h3 className="text-xl font-semibold mb-2">FRONT END DEVELOPER</h3>
+                    <p className="text-gray-600 mb-2">2023 - 2024</p>
+                    <p className="text-gray-600 mb-4">TeckVilla Ltd, Kigali, Kicukiro</p>
+                    <ul className="list-disc list-inside text-gray-600">
+                      <li>Implemented responsive designs using HTML, CSS, and JavaScript, ensuring consistency across devices and browsers.</li>
+                      <li>Conducted usability testing to iterate and improve design solutions based on user feedback.</li>
+                      <li>Developed and maintained front-end code using React and modern JavaScript features (ES6+).</li>
+                    </ul>
+                  </div>
+                </div>
+                <button>    <a
+                  href={resume}
+                  download="My_Resume.pdf" // Customize the download file name if needed
+                  data-aos="bounce"
+                  className="bg-gradient-to-br to-whitebg-gradient-to-br from-blue-300 to-blue-400 hover:from-blue-400 hover:to-slate-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50"
+                >
+                  Download My CV
+                </a></button>
+              </div>
+            </div>
+          </div>
 
-          
+
         </section>
 
         <section ref={el => sectionRefs.current['portfolio'] = el} className="bg-slate-800 ">
           <div className="container mx-auto px-4 py-8">
             <h1 className="text-4xl font-bold mb-4">Portfolio</h1>
             <p className="mb-8 text-white">
-            Designed engaging UI/UX projects and developed responsive front-end solutions, focusing on intuitive interfaces, accessibility, and seamless user experiences
+              Designed engaging UI/UX projects and developed responsive front-end solutions, focusing on intuitive interfaces, accessibility, and seamless user experiences
             </p>
 
             <div className="flex flex-wrap justify-center mb-8">
-  {categories.map((category) => (
-    <button
-      key={category}
-      className={`mx-1 sm:mx-2 my-1 px-3 py-2 sm:px-4 rounded ${selectedCategory === category ? 'bg-blue-300 text-white' : 'bg-white text-slate-700'
-        }`}
-      onClick={() => setSelectedCategory(category)}
-    >
-      {category}
-    </button>
-  ))}
-</div>
-
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  className={`mx-1 sm:mx-2 my-1 px-3 py-2 sm:px-4 rounded ${selectedCategory === category ? 'bg-blue-300 text-white' : 'bg-white text-slate-700'
+                    }`}
+                  onClick={() => setSelectedCategory(category)}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredItems.map((item) => (
                 <div key={item.id} className="relative group" data-aos="fade-up">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-auto"
-                  />
-              <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-  <div className="flex items-center">
-    <button
-      onClick={() => setModalImage(item.image)}
-      className="p-2 bg-white rounded-full mr-2"
-      aria-label="Zoom"
-    >
-      <ZoomIn className="w-6 text-gray-600 h-6" />
-    </button>
-    <a
-      href={item.link}
-      className="p-2 bg-white rounded-full shadow"
-      aria-label={`Link to ${item.title}`}
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      <LinkIcon className="w-6 h-6 text-gray-600" />
-    </a>
-  </div>
-</div>
+                  {/* Conditionally render video or image */}
+                  {item.video ? (
+                    <video
+                      src={item.video}
+                      controls
+                      className="w-full h-auto"
+                      muted
+                      loop
+                      autoPlay
+                    >
+                  
+                    </video>
+                  ) : (
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-auto"
+                    />
+                  )}
 
+                  {/* Overlay with buttons */}
+                  <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="flex items-center">
+                      <button
+                        onClick={() => setModalImage(item.image)}
+                        className="p-2 bg-white rounded-full mr-2"
+                        aria-label="Zoom"
+                      >
+                        <ZoomIn className="w-6 text-gray-600 h-6" />
+                      </button>
+                      <a
+                        href={item.link}
+                        className="p-2 bg-white rounded-full shadow"
+                        aria-label={`Link to ${item.title}`}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        <LinkIcon className="w-6 h-6 text-gray-600" />
+                      </a>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
-
-            {modalImage && (
+          {modalImage && (
               <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" onClick={() => setModalImage('')}>
                 <img
                   src={modalImage}
                   alt="Enlarged portfolio item"
-                  className="max-w-4xl max-h-max"
+                  className="max-w-4xl max-h-max" 
                 />
               </div>
             )}
@@ -734,8 +769,8 @@ export default function Portfolio() {
               <h1 className="text-4xl text-slate-700 font-bold mb-2" data-aos="fade-down">Contact</h1>
               <div className="w-20 h-1 bg-blue-300 mb-8" data-aos="fade-right"></div>
               <p className="text-gray-600 mb-12" data-aos="fade-up">
-              "Reach out for inquiries, support, or partnership opportunities!"
-              
+                "Reach out for inquiries, support, or partnership opportunities!"
+
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -764,18 +799,18 @@ export default function Portfolio() {
                     </div>
                   </div>
                   <div className="w-full h-64 rounded-lg overflow-hidden">
-                  <iframe
-                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1465.3096954514415!2d30.217543745947673!3d-1.98973105874895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e1!3m2!1sen!2srw!4v1729926465440!5m2!1sen!2srw"
-                width="90%"
-                height="200"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1465.3096954514415!2d30.217543745947673!3d-1.98973105874895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e1!3m2!1sen!2srw!4v1729926465440!5m2!1sen!2srw"
+                      width="90%"
+                      height="200"
+                      style={{ border: 0 }}
+                      allowFullScreen=""
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                    ></iframe>
                   </div>
                 </div>
-           
+
                 <div data-aos="fade-down">
                   <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-lg p-6">
                     <div className=" text-black grid grid-cols-2 gap-4 mb-4">
@@ -845,7 +880,7 @@ export default function Portfolio() {
 
         <footer className=" bg-slate-800 py-5 text-center text-white">
           <p>© Copyright PromesseIrakoze  <br />All Rights Reserved {currentYear}</p>
-          
+
         </footer>
 
       </main>
