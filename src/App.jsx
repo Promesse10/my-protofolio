@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector, Provider } from 'react-redux';
-import { addStudent, assignGroups, clearStudents } from './components/studentSlice';
-import store from '../store'; // Adjust the path to your Redux store file
+import { addStudent, assignGroups } from './components/studentSlice';
+import store from '../store';
 
 const App = () => {
   const [fullname, setFullname] = useState('');
@@ -10,7 +10,18 @@ const App = () => {
   const students = useSelector((state) => state.students.list);
   const groups = useSelector((state) => state.students.groups);
 
-  // Function to handle form submission
+  // Load groups if students exist
+  useEffect(() => {
+    if (students.length > 0) {
+      dispatch(assignGroups());
+    }
+  }, [dispatch, students]);
+
+  // Save students and groups to localStorage when they change
+  useEffect(() => {
+    localStorage.setItem('students', JSON.stringify({ list: students, groups }));
+  }, [students, groups]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -19,30 +30,17 @@ const App = () => {
       return;
     }
 
-    // Create a new student object
     const newStudent = { fullname, regNumber };
-
-    // Add the student to the list
     dispatch(addStudent(newStudent));
-
-    // Clear form inputs
     setFullname('');
     setRegNumber('');
   };
-
-  // Use effect to assign groups whenever students list is updated
-  useEffect(() => {
-    if (students.length > 0) {
-      dispatch(assignGroups());
-    }
-  }, [students, dispatch]);
 
   return (
     <div className="flex flex-col items-center min-h-screen bg-gradient-to-br from-purple-400 to-indigo-600 p-6 text-white">
       <h1 className="text-4xl font-bold mb-6 text-yellow-200">Random Group Generator</h1>
 
-      {/* Registration Form */}
-      <form onSubmit={handleSubmit} className="w-full max-w-md p-6 bg-white shadow-2xl rounded-lg space-y-4">
+      <form onSubmit={handleSubmit} className="w-full max-w-md p-6 bg-white text-black shadow-2xl rounded-lg space-y-4">
         <div className="mb-4">
           <label className="block text-sm font-bold text-gray-700 mb-1">Full Name</label>
           <input
@@ -73,7 +71,6 @@ const App = () => {
         </button>
       </form>
 
-      {/* Group Display */}
       <div className="w-full max-w-4xl mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {groups.map((group, index) => (
           <div key={index} className="p-6 bg-white rounded-lg shadow-md border border-gray-200">
@@ -96,7 +93,6 @@ const App = () => {
   );
 };
 
-// Wrap App component with Provider in App.jsx
 const WrappedApp = () => (
   <Provider store={store}>
     <App />

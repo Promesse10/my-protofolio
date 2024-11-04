@@ -1,38 +1,22 @@
-// Import necessary functions from Redux Toolkit
+// studentSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 
-// Initial state for the slice
-const initialState = {
-  list: [],      // List of students
-  groups: [],    // List of groups
-};
+const savedStudents = JSON.parse(localStorage.getItem('students')) || { list: [], groups: [] };
 
-// Utility function to assign students to random groups
-const assignStudentsToGroups = (students, groupSize = 3) => {
-  const shuffledStudents = [...students].sort(() => Math.random() - 0.5);
-  const groups = [];
-
-  for (let i = 0; i < shuffledStudents.length; i += groupSize) {
-    groups.push(shuffledStudents.slice(i, i + groupSize));
-  }
-
-  return groups;
-};
-
-// Create the slice
 const studentSlice = createSlice({
   name: 'students',
-  initialState,
+  initialState: savedStudents,
   reducers: {
-    // Action to add a student to the list
     addStudent: (state, action) => {
       state.list.push(action.payload);
     },
-    // Action to assign students to groups
     assignGroups: (state) => {
-      state.groups = assignStudentsToGroups(state.list);
+      const groupSize = 3; // Adjust group size as needed
+      state.groups = [];
+      for (let i = 0; i < state.list.length; i += groupSize) {
+        state.groups.push(state.list.slice(i, i + groupSize));
+      }
     },
-    // Action to clear students and groups
     clearStudents: (state) => {
       state.list = [];
       state.groups = [];
@@ -40,8 +24,6 @@ const studentSlice = createSlice({
   },
 });
 
-// Export actions for use in components
 export const { addStudent, assignGroups, clearStudents } = studentSlice.actions;
 
-// Export the reducer to be used in the store
 export default studentSlice.reducer;
