@@ -74,7 +74,7 @@ const App = () => {
       <div className="w-full max-w-4xl mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {groups.map((group, index) => (
           <div key={index} className="p-6 bg-white rounded-lg shadow-md border border-gray-200">
-            <h2 className="text-xl font-semibold text-indigo-600 mb-4">Group {index + 1}</h2>
+            <h2 className="text-xl font-semibold text-indigo-600 mb-4">Group {String.fromCharCode(65 + index)}</h2> {/* A, B, C, ... */}
             <ul className="space-y-2">
               {group.length > 0 ? (
                 group.map((student, idx) => (

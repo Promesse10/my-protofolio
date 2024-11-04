@@ -1,6 +1,14 @@
 // studentSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 
+// Helper function to shuffle an array
+function shuffleArray(array) {
+  return array
+    .map((item) => ({ item, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ item }) => item);
+}
+
 const savedStudents = JSON.parse(localStorage.getItem('students')) || { list: [], groups: [] };
 
 const studentSlice = createSlice({
@@ -12,9 +20,10 @@ const studentSlice = createSlice({
     },
     assignGroups: (state) => {
       const groupSize = 3; // Adjust group size as needed
+      const shuffledStudents = shuffleArray(state.list); // Shuffle students randomly
       state.groups = [];
-      for (let i = 0; i < state.list.length; i += groupSize) {
-        state.groups.push(state.list.slice(i, i + groupSize));
+      for (let i = 0; i < shuffledStudents.length; i += groupSize) {
+        state.groups.push(shuffledStudents.slice(i, i + groupSize));
       }
     },
     clearStudents: (state) => {
