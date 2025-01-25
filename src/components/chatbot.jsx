@@ -5,7 +5,7 @@ import EmojiPicker from 'emoji-picker-react'
 import { Send, Paperclip, Smile, MoreVertical, ChevronDown } from 'lucide-react'
 import { AnimatePresence } from 'framer-motion'
 import { WelcomeAnimation } from './ welcome-animation'
-import { qaData } from './qaData'
+import  qaData from './qadata'
 import Button from './Button'
 
 function Chatbot({ onClose }) {
