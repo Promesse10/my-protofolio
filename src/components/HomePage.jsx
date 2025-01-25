@@ -1,3 +1,4 @@
+"use client"
 import React, { useState, useRef, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import {
@@ -9,10 +10,7 @@ import {
   FaTwitter,
   FaLinkedinIn,
   FaBehance,
-  FaDatabase,
-  FaShieldAlt,
-  FaCode,
-  FaSearch,
+
   FaDownload,
   FaGithub,
   FaDribbble,
@@ -28,6 +26,7 @@ import Chatbot from "./chatbot"
 import ProjectCard from "./ProjectCard"
 import image from "../IMAGE/pic.jpg"
 import ProjectCarousel from "./ProjectCarousel"
+import LoadingScreen from "./LoadingScreen"
 
 export default function Portfolio() {
   const [activePage, setActivePage] = useState("home")
@@ -38,12 +37,22 @@ export default function Portfolio() {
   const [isChatbotOpen, setIsChatbotOpen] = useState(false)
   const [filter, setFilter] = useState("all")
   const [isProjectModalOpen, setIsProjectModalOpen] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     if (contentRef.current) {
       contentRef.current.scrollTo(0, 0)
     }
   }, [activePage])
+
+  useEffect(() => {
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+    }, 5000) // 5 seconds loading time
+
+    return () => clearTimeout(timer)
+  }, [])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -111,7 +120,7 @@ export default function Portfolio() {
       title: "",
       content: (
         <div className="space-y-6">
-          <h1 className="text-4xl md:text-5xl font-bold">Hi, I'm Jose Niko</h1>
+          <h1 className="text-4xl md:text-5xl font-bold">Hi, I'm Promesse</h1>
           <p className="text-xl">
             <TypeWriter
               words={["Front-end Developer", "UI/UX Developer"]}
@@ -163,7 +172,7 @@ export default function Portfolio() {
                 <p className={`${isDarkMode ? "text-gray-300" : "text-gray-950"}`}>University of Technology, 2018</p>
               </li>
               <li>
-                <h4 className="font-semibold">Bachelor's in Software Engineering</h4>
+                <h4 className="font-semibold"> Bachelor's in Software Engineering</h4>
                 <p className={`${isDarkMode ? "text-gray-300" : "text-gray-950"}`}>State University, 2016</p>
               </li>
             </ul>
@@ -276,6 +285,10 @@ export default function Portfolio() {
     setIsMobileMenuOpen(false)
   }
 
+  if (isLoading) {
+    return <LoadingScreen />
+  }
+
   return (
     <div className={`min-h-screen ${isDarkMode ? "dark bg-gray-900" : "bg-gray-100"} transition-colors duration-300`}>
       <div className="min-h-screen dark:text-white p-4 md:p-8 flex flex-col md:flex-row md:items-center md:justify-center">
@@ -308,9 +321,9 @@ export default function Portfolio() {
             <motion.div
               whileHover={{ scale: 1.2, rotate: 360 }}
               transition={{ type: "spring", stiffness: 260, damping: 20 }}
-              className="w-12 h-12 bg-[#00a2e3]/20 text-[#00a2e3] rounded-xl flex items-center justify-center text-xl font-bold"
+              className="w-14 h-14 bg-[#00a2e3]/20 text-[#00a2e3] rounded-xl flex items-center justify-center text-xl font-bold"
             >
-              JN
+              {`</ip>`}
             </motion.div>
 
             <nav className="flex flex-col gap-6 items-center md:items-stretch">
