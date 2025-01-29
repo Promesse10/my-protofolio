@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from "react"
 import karkelly from "../IMAGE/karkelly.jpg"
 import rushago from "../IMAGE/rusha go.jpg"
 import Restor from "../IMAGE/Restoran.jpg"
-import vr from "../IMAGE/original-25ef619e86b78ee9b23ba193bf3019ff.webp"
+import vr from "../IMAGE/Final.jpg"
 import Environment from "../IMAGE/environment.jpg"
 function ProjectCarousel({ onClose }) {
   const [selectedIndex, setSelectedIndex] = useState(0)
