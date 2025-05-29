@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from "react"
 import karkelly from "../IMAGE/karkelly.jpg"
 import rushago from "../IMAGE/rusha go.jpg"
 import Restor from "../IMAGE/Restoran.jpg"
-import vr from "../IMAGE/Final.jpg"
+
 import Environment from "../IMAGE/environment.jpg"
 function ProjectCarousel({ onClose }) {
   const [selectedIndex, setSelectedIndex] = useState(0)
@@ -31,13 +31,7 @@ function ProjectCarousel({ onClose }) {
       technologies: ["HTML", "CSS", "JAVASCRIPT"],
       description: "Restora is a website designed for restaurants, enhance customer dining experiences.",
     },
-    {
-      id: 4,
-      title: "Virtual Reality (VR)",
-      image: vr,
-      technologies: ["Figma"," Three.js"],
-      description: "Dressing Room 3D is an interactive platform that allows users to virtually try on clothes in a 3D",
-    },
+  
     {
       id: 5,
       title: "Environment web",

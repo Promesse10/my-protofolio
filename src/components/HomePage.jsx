@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { SiThreedotjs } from "react-icons/si";
+import { SiNextdotjs } from "react-icons/si";
 import { FaComments } from "react-icons/fa";
 import {
   FaUser,
@@ -30,8 +30,9 @@ import isuzume from "../IMAGE/isuzume.jpg";
 import image from "../IMAGE/pic2.jpg";
 import ProjectCarousel from "./ProjectCarousel";
 import LoadingScreen from "./LoadingScreen";
-import kigalievent from "../IMAGE/kigalievent.jpg";
+import estation from "../IMAGE/estation.jpg";
 import emailjs from "@emailjs/browser";
+import agro from "../IMAGE/agro.png";
 export default function Portfolio() {
   const [activePage, setActivePage] = useState("home");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -158,11 +159,18 @@ export default function Portfolio() {
       image: Restor,
     },
     {
-      title: "kigali event",
+      title: "Estation",
 
-      link: "https://www.figma.com/proto/tjVq7WgpbsHqUwMXLiKMDv/KIGALI-Events?node-id=247-81&scaling=scale-down-width&content-scaling=fixed&hide-ui=1",
+      link: "https://www.figma.com/proto/mkgBFn0K6nPLdRQsB6VHcG/Untitled?node-id=1-2&starting-point-node-id=1%3A2&scaling=contain&content-scaling=responsive&t=25xquNXjbDXDyVT7-1",
       category: "ui/ux",
-      image: kigalievent,
+      image: estation,
+    },
+    {
+      title: "AgroTech",
+
+      link: "https://agrotechrw.vercel.app/",
+      category: "frontend",
+      image: agro,
     },
   ];
 
@@ -182,12 +190,16 @@ export default function Portfolio() {
           </p>
           <div className={`${isDarkMode ? "text-gray-300" : "text-gray-950"}`}>
             <p>
-              I am a passionate UI/UX Designer and Front-End Developer with over
-              3 years of experience. Skilled in Figma, Photoshop, I create
-              intuitive designs for websites and mobile apps. As a front-end
-              developer, I specialize in React.js, React Native, HTML5, CSS3,
-              and JavaScript to bring designs to life and deliver seamless user
-              experiences.
+             
+I am a passionate UI/UX Designer and Front-End Engineer with over three years of experience. I am skilled in Figma and Adobe Photoshop, and I create intuitive designs for web applications. As a front-end developer, I specialize in React.js, Next.js, HTML, CSS, and JavaScript to bring designs to life and deliver seamless user experiences. I have a robust background in enhancing web application performance and user experience.
+
+
+
+
+
+
+Sources
+
             </p>
 
             <div className="flex mb-3 gap-4 mt-4">
@@ -209,9 +221,9 @@ export default function Portfolio() {
 
               {/* Three.js */}
               <div className="relative group p-3 bg-[#02a3e4] text-white rounded-full">
-                <SiThreedotjs className="text-2xl" />
+              <SiNextdotjs className="text-2xl" />
                 <span className="absolute left-1/2 transform -translate-x-1/2 bottom-0 bg-black text-white text-xs py-1 px-2 rounded-md opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-10 transition-all duration-300">
-                  Three.js
+                  Next Js
                 </span>
               </div>
 
@@ -262,12 +274,12 @@ export default function Portfolio() {
               />
               <SkillBar
                 skill="React, React Native"
-                percentage={94}
+                percentage={84}
                 isDarkMode={isDarkMode}
               />
               <SkillBar
-                skill="Three.js"
-                percentage={50}
+                skill="Next Js"
+                percentage={60}
                 isDarkMode={isDarkMode}
               />
               <SkillBar skill="FIGMA" percentage={95} isDarkMode={isDarkMode} />
